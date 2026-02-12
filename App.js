@@ -13,18 +13,23 @@
  * - Collection view for liked Pokémon
  */
 
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { TouchableOpacity, Platform } from 'react-native';
+import { TouchableOpacity, Platform, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
 import { PokemonProvider, usePokemon } from './context/PokemonContext';
 
 // Import screens
 import WelcomeScreen from './screens/WelcomeScreen';
 import SwipeScreen from './screens/SwipeScreen';
 import LikedPokemonScreen from './screens/LikedPokemonScreen';
+
+// Keep the splash screen visible while we fetch resources
+SplashScreen.preventAutoHideAsync();
 
 const Stack = createStackNavigator();
 
@@ -155,9 +160,29 @@ const AppNavigator = () => {
 
 /**
  * Main App Component
- * Wraps the app with necessary providers
+ * Wraps the app with necessary providers and handles font loading
  */
 export default function App() {
+  // Load fonts
+  const [fontsLoaded] = useFonts({
+    ...Ionicons.font,
+  });
+
+  // Hide splash screen when fonts are loaded
+  useEffect(() => {
+    async function prepare() {
+      if (fontsLoaded) {
+        await SplashScreen.hideAsync();
+      }
+    }
+    prepare();
+  }, [fontsLoaded]);
+
+  // Don't render anything until fonts are loaded
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
     <PokemonProvider>
       <AppNavigator />
