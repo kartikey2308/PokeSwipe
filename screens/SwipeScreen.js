@@ -23,6 +23,7 @@ const SwipeScreen = ({ navigation }) => {
   const {
     likePokemon,
     isDarkMode,
+    toggleDarkMode,
     markPokemonAsSeen,
     isPokemonSeen,
     stats,
@@ -134,17 +135,30 @@ const SwipeScreen = ({ navigation }) => {
           Discover Pokémon
         </Text>
         
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Liked')}
-          style={styles.headerButton}
-        >
-          <Ionicons name="heart" size={24} color={colors.likeButton} />
-          {stats.totalLiked > 0 && (
-            <View style={styles.badge}>
-              <Text style={styles.badgeText}>{stats.totalLiked}</Text>
-            </View>
-          )}
-        </TouchableOpacity>
+        <View style={styles.headerRight}>
+          <TouchableOpacity
+            onPress={toggleDarkMode}
+            style={styles.themeButton}
+          >
+            <Ionicons
+              name={isDarkMode ? 'sunny' : 'moon'}
+              size={22}
+              color={isDarkMode ? '#FFD700' : '#666'}
+            />
+          </TouchableOpacity>
+          
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Liked')}
+            style={styles.headerButton}
+          >
+            <Ionicons name="heart" size={24} color={colors.likeButton} />
+            {stats.totalLiked > 0 && (
+              <View style={styles.badge}>
+                <Text style={styles.badgeText}>{stats.totalLiked}</Text>
+              </View>
+            )}
+          </TouchableOpacity>
+        </View>
       </View>
 
       {/* Stats */}
@@ -243,6 +257,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     position: 'relative',
+  },
+  headerRight: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  themeButton: {
+    width: 36,
+    height: 36,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   badge: {
     position: 'absolute',

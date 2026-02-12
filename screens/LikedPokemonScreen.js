@@ -23,7 +23,7 @@ const { width } = Dimensions.get('window');
 const CARD_WIDTH = (width - 60) / 2; // 2 columns with spacing
 
 const LikedPokemonScreen = ({ navigation }) => {
-  const { likedPokemon, unlikePokemon, isDarkMode } = usePokemon();
+  const { likedPokemon, unlikePokemon, isDarkMode, toggleDarkMode } = usePokemon();
 
   // Theme-based colors
   const colors = isDarkMode
@@ -121,7 +121,16 @@ const LikedPokemonScreen = ({ navigation }) => {
           My Pokémon ({likedPokemon.length})
         </Text>
         
-        <View style={styles.headerButton} />
+        <TouchableOpacity
+          onPress={toggleDarkMode}
+          style={styles.headerButton}
+        >
+          <Ionicons
+            name={isDarkMode ? 'sunny' : 'moon'}
+            size={22}
+            color={isDarkMode ? '#FFD700' : '#666'}
+          />
+        </TouchableOpacity>
       </View>
 
       {/* Content */}

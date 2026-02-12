@@ -101,56 +101,10 @@ const AppNavigator = () => {
           <Stack.Screen 
             name="Swipe" 
             component={SwipeScreen}
-            options={({ navigation }) => ({
-              headerShown: true,
-              headerTransparent: true,
-              headerTitle: '',
-              headerLeft: () => null,
-              headerRight: () => (
-                <TouchableOpacity
-                  onPress={toggleDarkMode}
-                  style={{
-                    marginRight: 20,
-                    padding: 8,
-                    borderRadius: 20,
-                    backgroundColor: isDarkMode ? '#2a2a3e' : '#ffffff50',
-                  }}
-                >
-                  <Ionicons
-                    name={isDarkMode ? 'sunny' : 'moon'}
-                    size={24}
-                    color={isDarkMode ? '#FFD700' : '#333333'}
-                  />
-                </TouchableOpacity>
-              ),
-            })}
           />
           <Stack.Screen 
             name="Liked" 
             component={LikedPokemonScreen}
-            options={({ navigation }) => ({
-              headerShown: true,
-              headerTransparent: true,
-              headerTitle: '',
-              headerLeft: () => null,
-              headerRight: () => (
-                <TouchableOpacity
-                  onPress={toggleDarkMode}
-                  style={{
-                    marginRight: 20,
-                    padding: 8,
-                    borderRadius: 20,
-                    backgroundColor: isDarkMode ? '#2a2a3e' : '#ffffff50',
-                  }}
-                >
-                  <Ionicons
-                    name={isDarkMode ? 'sunny' : 'moon'}
-                    size={24}
-                    color={isDarkMode ? '#FFD700' : '#333333'}
-                  />
-                </TouchableOpacity>
-              ),
-            })}
           />
         </Stack.Navigator>
       </NavigationContainer>
