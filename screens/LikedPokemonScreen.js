@@ -211,7 +211,8 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontFamily: CUSTOM_FONT,
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: '700',
+    letterSpacing: 0.4,
   },
   scrollView: {
     flex: 1,
@@ -226,6 +227,8 @@ const styles = StyleSheet.create({
   summaryText: {
     fontFamily: CUSTOM_FONT,
     fontSize: 16,
+    fontWeight: '600',
+    letterSpacing: 0.3,
     textAlign: 'center',
     lineHeight: 22,
   },
@@ -267,7 +270,8 @@ const styles = StyleSheet.create({
   gridName: {
     fontFamily: CUSTOM_FONT,
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: '700',
+    letterSpacing: 0.4,
     textAlign: 'center',
     width: '100%',
     marginBottom: 4,
@@ -275,6 +279,8 @@ const styles = StyleSheet.create({
   gridId: {
     fontFamily: CUSTOM_FONT,
     fontSize: 12,
+    fontWeight: '600',
+    letterSpacing: 0.3,
     marginBottom: 8,
   },
   gridTypes: {
@@ -294,7 +300,8 @@ const styles = StyleSheet.create({
     fontFamily: CUSTOM_FONT,
     color: '#ffffff',
     fontSize: 11,
-    fontWeight: '600',
+    fontWeight: '700',
+    letterSpacing: 0.3,
   },
   emptyContainer: {
     flex: 1,
@@ -309,12 +316,15 @@ const styles = StyleSheet.create({
   emptyTitle: {
     fontFamily: CUSTOM_FONT,
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: '700',
+    letterSpacing: 0.5,
     marginBottom: 10,
   },
   emptyText: {
     fontFamily: CUSTOM_FONT,
     fontSize: 16,
+    fontWeight: '600',
+    letterSpacing: 0.3,
     textAlign: 'center',
     marginBottom: 30,
     paddingHorizontal: 40,
@@ -329,7 +339,8 @@ const styles = StyleSheet.create({
     fontFamily: CUSTOM_FONT,
     color: '#ffffff',
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: '700',
+    letterSpacing: 0.4,
   },
   fab: {
     position: 'absolute',

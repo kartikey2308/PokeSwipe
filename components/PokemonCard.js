@@ -189,6 +189,8 @@ const styles = StyleSheet.create({
   errorText: {
     fontFamily: CUSTOM_FONT,
     fontSize: 14,
+    fontWeight: '600',
+    letterSpacing: 0.3,
     marginBottom: 8,
   },
   errorEmoji: {
@@ -197,13 +199,16 @@ const styles = StyleSheet.create({
   name: {
     fontFamily: CUSTOM_FONT,
     fontSize: 32,
-    fontWeight: 'bold',
+    fontWeight: '700',
+    letterSpacing: 0.5,
     marginBottom: 5,
     textAlign: 'center',
   },
   id: {
     fontFamily: CUSTOM_FONT,
     fontSize: 16,
+    fontWeight: '600',
+    letterSpacing: 0.3,
     marginBottom: 20,
   },
   section: {
@@ -213,7 +218,8 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontFamily: CUSTOM_FONT,
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: '700',
+    letterSpacing: 0.4,
     marginBottom: 10,
   },
   typesContainer: {
@@ -230,7 +236,8 @@ const styles = StyleSheet.create({
     fontFamily: CUSTOM_FONT,
     color: '#ffffff',
     fontSize: 14,
-    fontWeight: '600',
+    fontWeight: '700',
+    letterSpacing: 0.4,
   },
   abilitiesContainer: {
     flexDirection: 'row',
@@ -246,6 +253,8 @@ const styles = StyleSheet.create({
   abilityText: {
     fontFamily: CUSTOM_FONT,
     fontSize: 13,
+    fontWeight: '600',
+    letterSpacing: 0.3,
   },
   statsContainer: {
     flexDirection: 'row',
@@ -267,12 +276,15 @@ const styles = StyleSheet.create({
   statLabel: {
     fontFamily: CUSTOM_FONT,
     fontSize: 12,
+    fontWeight: '600',
+    letterSpacing: 0.3,
     marginBottom: 4,
   },
   statValue: {
     fontFamily: CUSTOM_FONT,
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: '700',
+    letterSpacing: 0.4,
   },
 });
 

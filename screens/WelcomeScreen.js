@@ -47,7 +47,7 @@ const WelcomeScreen = ({ navigation }) => {
         {/* App Logo/Title */}
         <View style={styles.header}>
           <Text style={[styles.logo, { color: colors.text }]}>
-            🎮 PokéSwipe
+            PokéSwipe
           </Text>
           <Text style={[styles.tagline, { color: colors.subtext }]}>
             Gotta Catch Your Love!
@@ -61,30 +61,20 @@ const WelcomeScreen = ({ navigation }) => {
           </Text>
           
           <View style={styles.instruction}>
-            <Text style={styles.emoji}>👉</Text>
             <Text style={[styles.instructionText, { color: isDarkMode ? '#ccc' : '#666' }]}>
-              Discover random Pokémon one at a time
+              Pokemon Appear One at a Time
             </Text>
           </View>
 
           <View style={styles.instruction}>
-            <Text style={styles.emoji}>💚</Text>
             <Text style={[styles.instructionText, { color: isDarkMode ? '#ccc' : '#666' }]}>
-              Tap the heart to add Pokémon to your favorites
+              Choose "Like" or "Dislike"
             </Text>
           </View>
 
           <View style={styles.instruction}>
-            <Text style={styles.emoji}>💔</Text>
             <Text style={[styles.instructionText, { color: isDarkMode ? '#ccc' : '#666' }]}>
-              Tap the X to pass on a Pokémon
-            </Text>
-          </View>
-
-          <View style={styles.instruction}>
-            <Text style={styles.emoji}>📱</Text>
-            <Text style={[styles.instructionText, { color: isDarkMode ? '#ccc' : '#666' }]}>
-              View your collection anytime from the top menu
+              Build Your Favourite Team
             </Text>
           </View>
         </View>
@@ -95,7 +85,7 @@ const WelcomeScreen = ({ navigation }) => {
           onPress={() => navigation.navigate('Swipe')}
           activeOpacity={0.8}
         >
-          <Text style={styles.buttonText}>Start Swiping! ✨</Text>
+          <Text style={styles.buttonText}>Let`s Go!</Text>
         </TouchableOpacity>
 
         {/* Footer */}
@@ -124,21 +114,16 @@ const styles = StyleSheet.create({
   logo: {
     fontFamily: CUSTOM_FONT,
     fontSize: 48,
-    fontWeight: 'bold',
+    fontWeight: '700',
+    letterSpacing: 0.5,
     marginBottom: 10,
     textAlign: 'center',
-    ...Platform.select({
-      ios: {
-        fontWeight: '800',
-      },
-      android: {
-        fontWeight: 'bold',
-      },
-    }),
   },
   tagline: {
     fontFamily: CUSTOM_FONT,
     fontSize: 18,
+    fontWeight: '600',
+    letterSpacing: 0.3,
     textAlign: 'center',
     fontStyle: 'italic',
   },
@@ -163,7 +148,8 @@ const styles = StyleSheet.create({
   cardTitle: {
     fontFamily: CUSTOM_FONT,
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: '700',
+    letterSpacing: 0.4,
     marginBottom: 20,
     textAlign: 'center',
   },
@@ -180,6 +166,8 @@ const styles = StyleSheet.create({
   instructionText: {
     fontFamily: CUSTOM_FONT,
     fontSize: 16,
+    fontWeight: '600',
+    letterSpacing: 0.3,
     flex: 1,
     lineHeight: 22,
   },
@@ -205,13 +193,16 @@ const styles = StyleSheet.create({
     fontFamily: CUSTOM_FONT,
     color: '#ffffff',
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: '700',
+    letterSpacing: 0.4,
   },
   footer: {
     fontFamily: CUSTOM_FONT,
     position: 'absolute',
     bottom: 20,
     fontSize: 14,
+    fontWeight: '600',
+    letterSpacing: 0.3,
     textAlign: 'center',
   },
 });

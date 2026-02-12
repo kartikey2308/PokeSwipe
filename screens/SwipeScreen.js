@@ -286,12 +286,14 @@ const styles = StyleSheet.create({
     fontFamily: CUSTOM_FONT,
     color: '#ffffff',
     fontSize: 12,
-    fontWeight: 'bold',
+    fontWeight: '700',
+    letterSpacing: 0.3,
   },
   headerTitle: {
     fontFamily: CUSTOM_FONT,
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: '700',
+    letterSpacing: 0.4,
   },
   statsBar: {
     alignItems: 'center',
@@ -300,6 +302,8 @@ const styles = StyleSheet.create({
   statsText: {
     fontFamily: CUSTOM_FONT,
     fontSize: 14,
+    fontWeight: '600',
+    letterSpacing: 0.3,
   },
   content: {
     flex: 1,
@@ -316,10 +320,14 @@ const styles = StyleSheet.create({
     fontFamily: CUSTOM_FONT,
     marginTop: 15,
     fontSize: 16,
+    fontWeight: '600',
+    letterSpacing: 0.3,
   },
   errorText: {
     fontFamily: CUSTOM_FONT,
     fontSize: 16,
+    fontWeight: '600',
+    letterSpacing: 0.3,
     textAlign: 'center',
     marginBottom: 20,
   },
@@ -332,7 +340,8 @@ const styles = StyleSheet.create({
     fontFamily: CUSTOM_FONT,
     color: '#ffffff',
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: '700',
+    letterSpacing: 0.4,
   },
   buttonsContainer: {
     flexDirection: 'row',
@@ -365,6 +374,8 @@ const styles = StyleSheet.create({
     fontFamily: CUSTOM_FONT,
     marginTop: 20,
     fontSize: 14,
+    fontWeight: '600',
+    letterSpacing: 0.3,
     fontStyle: 'italic',
   },
 });
