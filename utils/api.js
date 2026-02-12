@@ -4,7 +4,6 @@
  */
 
 const POKEAPI_BASE_URL = 'https://pokeapi.co/api/v2';
-const POKEMON_IMAGE_BASE_URL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world';
 
 // Total number of Pokémon available (Gen 1-9)
 const MAX_POKEMON_ID = 1010;
@@ -18,12 +17,29 @@ export const getRandomPokemonId = () => {
 };
 
 /**
- * Constructs the image URL for a given Pokémon ID
- * @param {number} id - Pokémon ID
- * @returns {string} Full image URL
+ * Gets the best available image URL from Pokémon sprites data
+ * Uses fallback chain: official-artwork > home > dream-world > front_default
+ * @param {Object} sprites - Sprites object from PokéAPI
+ * @returns {string} Best available image URL
  */
-export const getPokemonImageUrl = (id) => {
-  return `${POKEMON_IMAGE_BASE_URL}/${id}.svg`;
+const getBestImageUrl = (sprites) => {
+  // Try official artwork first (highest quality)
+  if (sprites.other?.['official-artwork']?.front_default) {
+    return sprites.other['official-artwork'].front_default;
+  }
+  
+  // Try home sprites (high quality)
+  if (sprites.other?.home?.front_default) {
+    return sprites.other.home.front_default;
+  }
+  
+  // Try dream world sprites
+  if (sprites.other?.dream_world?.front_default) {
+    return sprites.other.dream_world.front_default;
+  }
+  
+  // Fallback to regular front sprite
+  return sprites.front_default || '';
 };
 
 /**
@@ -46,7 +62,7 @@ export const fetchRandomPokemon = async () => {
     return {
       id: data.id,
       name: data.name,
-      image: getPokemonImageUrl(data.id),
+      image: getBestImageUrl(data.sprites),
       abilities: data.abilities.map(a => a.ability.name),
       types: data.types.map(t => t.type.name),
       height: data.height,
@@ -76,7 +92,7 @@ export const fetchPokemonById = async (id) => {
     return {
       id: data.id,
       name: data.name,
-      image: getPokemonImageUrl(data.id),
+      image: getBestImageUrl(data.sprites),
       abilities: data.abilities.map(a => a.ability.name),
       types: data.types.map(t => t.type.name),
       height: data.height,
