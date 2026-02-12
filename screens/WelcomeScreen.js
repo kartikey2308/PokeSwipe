@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { usePokemon } from '../context/PokemonContext';
+import { CUSTOM_FONT } from '../utils/commonStyles';
 
 const { width } = Dimensions.get('window');
 
@@ -121,6 +122,7 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   logo: {
+    fontFamily: CUSTOM_FONT,
     fontSize: 48,
     fontWeight: 'bold',
     marginBottom: 10,
@@ -135,6 +137,7 @@ const styles = StyleSheet.create({
     }),
   },
   tagline: {
+    fontFamily: CUSTOM_FONT,
     fontSize: 18,
     textAlign: 'center',
     fontStyle: 'italic',
@@ -158,6 +161,7 @@ const styles = StyleSheet.create({
     }),
   },
   cardTitle: {
+    fontFamily: CUSTOM_FONT,
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
@@ -174,6 +178,7 @@ const styles = StyleSheet.create({
     width: 32,
   },
   instructionText: {
+    fontFamily: CUSTOM_FONT,
     fontSize: 16,
     flex: 1,
     lineHeight: 22,
@@ -197,11 +202,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buttonText: {
+    fontFamily: CUSTOM_FONT,
     color: '#ffffff',
     fontSize: 18,
     fontWeight: 'bold',
   },
   footer: {
+    fontFamily: CUSTOM_FONT,
     position: 'absolute',
     bottom: 20,
     fontSize: 14,

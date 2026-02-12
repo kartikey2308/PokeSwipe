@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { getTypeColor } from '../utils/api';
+import { CUSTOM_FONT } from '../utils/commonStyles';
 
 const { width } = Dimensions.get('window');
 const CARD_WIDTH = Math.min(width - 40, 400);
@@ -186,6 +187,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   errorText: {
+    fontFamily: CUSTOM_FONT,
     fontSize: 14,
     marginBottom: 8,
   },
@@ -193,12 +195,14 @@ const styles = StyleSheet.create({
     fontSize: 48,
   },
   name: {
+    fontFamily: CUSTOM_FONT,
     fontSize: 32,
     fontWeight: 'bold',
     marginBottom: 5,
     textAlign: 'center',
   },
   id: {
+    fontFamily: CUSTOM_FONT,
     fontSize: 16,
     marginBottom: 20,
   },
@@ -207,6 +211,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   sectionTitle: {
+    fontFamily: CUSTOM_FONT,
     fontSize: 16,
     fontWeight: '600',
     marginBottom: 10,
@@ -222,6 +227,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   typeBadgeText: {
+    fontFamily: CUSTOM_FONT,
     color: '#ffffff',
     fontSize: 14,
     fontWeight: '600',
@@ -238,6 +244,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   abilityText: {
+    fontFamily: CUSTOM_FONT,
     fontSize: 13,
   },
   statsContainer: {
@@ -258,10 +265,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   statLabel: {
+    fontFamily: CUSTOM_FONT,
     fontSize: 12,
     marginBottom: 4,
   },
   statValue: {
+    fontFamily: CUSTOM_FONT,
     fontSize: 18,
     fontWeight: 'bold',
   },

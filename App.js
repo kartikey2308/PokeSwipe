@@ -13,13 +13,16 @@
  * - Collection view for liked Pokémon
  */
 
+// Import global text configuration FIRST
+import './utils/globalTextConfig';
+
 import React, { useCallback, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { TouchableOpacity, Platform, View } from 'react-native';
+import { TouchableOpacity, Platform, View, Text, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { useFonts } from 'expo-font';
+import { useFonts, ShadowsIntoLightTwo_400Regular } from '@expo-google-fonts/shadows-into-light-two';
 import * as SplashScreen from 'expo-splash-screen';
 import { PokemonProvider, usePokemon } from './context/PokemonContext';
 
@@ -117,9 +120,10 @@ const AppNavigator = () => {
  * Wraps the app with necessary providers and handles font loading
  */
 export default function App() {
-  // Load fonts
+  // Load fonts including Google Font
   const [fontsLoaded] = useFonts({
     ...Ionicons.font,
+    ShadowsIntoLightTwo_400Regular,
   });
 
   // Hide splash screen when fonts are loaded

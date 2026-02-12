@@ -18,6 +18,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { usePokemon } from '../context/PokemonContext';
 import { getTypeColor } from '../utils/api';
+import { CUSTOM_FONT } from '../utils/commonStyles';
 
 const { width } = Dimensions.get('window');
 const CARD_WIDTH = (width - 60) / 2; // 2 columns with spacing
@@ -208,6 +209,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   headerTitle: {
+    fontFamily: CUSTOM_FONT,
     fontSize: 20,
     fontWeight: 'bold',
   },
@@ -222,6 +224,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   summaryText: {
+    fontFamily: CUSTOM_FONT,
     fontSize: 16,
     textAlign: 'center',
     lineHeight: 22,
@@ -262,6 +265,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   gridName: {
+    fontFamily: CUSTOM_FONT,
     fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'center',
@@ -269,6 +273,7 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   gridId: {
+    fontFamily: CUSTOM_FONT,
     fontSize: 12,
     marginBottom: 8,
   },
@@ -286,6 +291,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   gridTypeText: {
+    fontFamily: CUSTOM_FONT,
     color: '#ffffff',
     fontSize: 11,
     fontWeight: '600',
@@ -301,11 +307,13 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   emptyTitle: {
+    fontFamily: CUSTOM_FONT,
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 10,
   },
   emptyText: {
+    fontFamily: CUSTOM_FONT,
     fontSize: 16,
     textAlign: 'center',
     marginBottom: 30,
@@ -318,6 +326,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
   },
   emptyButtonText: {
+    fontFamily: CUSTOM_FONT,
     color: '#ffffff',
     fontSize: 16,
     fontWeight: 'bold',

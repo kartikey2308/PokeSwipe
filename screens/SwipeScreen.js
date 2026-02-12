@@ -18,6 +18,7 @@ import { Ionicons } from '@expo/vector-icons';
 import PokemonCard from '../components/PokemonCard';
 import { fetchRandomPokemon } from '../utils/api';
 import { usePokemon } from '../context/PokemonContext';
+import { CUSTOM_FONT } from '../utils/commonStyles';
 
 const SwipeScreen = ({ navigation }) => {
   const {
@@ -282,11 +283,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 4,
   },
   badgeText: {
+    fontFamily: CUSTOM_FONT,
     color: '#ffffff',
     fontSize: 12,
     fontWeight: 'bold',
   },
   headerTitle: {
+    fontFamily: CUSTOM_FONT,
     fontSize: 20,
     fontWeight: 'bold',
   },
@@ -295,6 +298,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   statsText: {
+    fontFamily: CUSTOM_FONT,
     fontSize: 14,
   },
   content: {
@@ -309,10 +313,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   loadingText: {
+    fontFamily: CUSTOM_FONT,
     marginTop: 15,
     fontSize: 16,
   },
   errorText: {
+    fontFamily: CUSTOM_FONT,
     fontSize: 16,
     textAlign: 'center',
     marginBottom: 20,
@@ -323,6 +329,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
   },
   retryButtonText: {
+    fontFamily: CUSTOM_FONT,
     color: '#ffffff',
     fontSize: 16,
     fontWeight: 'bold',
@@ -355,6 +362,7 @@ const styles = StyleSheet.create({
     opacity: 0.5,
   },
   hintText: {
+    fontFamily: CUSTOM_FONT,
     marginTop: 20,
     fontSize: 14,
     fontStyle: 'italic',
